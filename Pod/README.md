@@ -14,4 +14,8 @@ $ kubectl port-forward <PodName> <localPort>:<PodPort>
 $ kubectl expose pod <PodNmae> --type=NodePort --name=<ServiceName>
 ```
 
+# add label dynamically
+```
+$ kubectl label pods <PodNmae> <Key>=<Value>
+```
 
