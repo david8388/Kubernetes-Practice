@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      end: my-deployment
+  template:
+    metadata:
+      labels:
+        end: my-deployment
+    spec:
+      containers:
+      - name: my-pod
+        image: hsienwu830808/docker-demo:v2.0.0
+        ports:
+        - containerPort: 3000
