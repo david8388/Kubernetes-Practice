@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: my-replication-controller
+spec:
+  replicas: 2
+  selector:
+    app: webserver2
+  template:
+    metadata:
+      labels:
+        app: webserver2
+    spec:
+      containers:
+      - name: my-pod
+        image: hsienwu830808/docker-demo
+        ports:
+        - containerPort: 3000
