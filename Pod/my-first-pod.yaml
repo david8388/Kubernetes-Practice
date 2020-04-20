@@ -10,3 +10,15 @@ spec:
     image: hsienwu830808/docker-demo
     ports:
     - containerPort: 3000
+    env:
+    - name: SECRET_USERNAME
+      valueFrom:
+        secretKeyRef:
+          name: demo-secret-from-yaml
+          key: username
+    - name: SECRET_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: demo-secret-from-yaml
+          key: password
+
